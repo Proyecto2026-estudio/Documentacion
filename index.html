@@ -692,10 +692,10 @@
           mail y WhatsApp por un único sistema con perfiles diferenciados para el estudio y sus clientes PyME.
         </p>
         <div class="meta-strip">
-          <div class="item"><div class="label">Versión</div><div class="value">2.0 (Revisado)</div></div>
-          <div class="item"><div class="label">Fecha</div><div class="value">21/09/2026</div></div>
+          <div class="item"><div class="label">Versión</div><div class="value">2.1 (Actualizado)</div></div>
+          <div class="item"><div class="label">Fecha</div><div class="value">30/10/2026</div></div>
           <div class="item"><div class="label">Cliente</div><div class="value">Gabriel Eduardo Casil (ECR)</div></div>
-          <div class="item"><div class="label">Estado</div><div class="value">En desarrollo</div></div>
+          <div class="item"><div class="label">Estado</div><div class="value">Prueba piloto · entrega final</div></div>
         </div>
       </div>
 
@@ -736,6 +736,12 @@
                 <td>21/09</td>
                 <td>Equipo Nº 8</td>
                 <td>Consolidación de esta carpeta del proyecto para documentación y entrega a la cátedra.</td>
+              </tr>
+              <tr>
+                <td class="id-cell">2.1</td>
+                <td>30/10</td>
+                <td>Equipo Nº 8</td>
+                <td><strong>Actualización posterior a las pruebas piloto con el estudio.</strong> Se incorporan los cambios pedidos por el cliente: documentos organizados por cliente con carga masiva y borrado múltiple, filtros tipo Excel y borrado múltiple en Clientes, calendario de vencimientos con colores y selector de año, vencimientos para varios clientes (por terminación de CUIT) y carga masiva desde Excel, reportes con totales y gráfico circular, Asistente de IA con la carpeta del cliente, nuevo logo, acceso al apartado Sistema solo para administradores y mensajes de error de ingreso específicos. Se actualizan requerimientos (RF09 a RF14), pantallas, guía de inicio rápido, FAQ, horas y bitácora. La localidad del estudio queda corregida a San Martín.</td>
               </tr>
             </tbody>
           </table>
@@ -846,6 +852,8 @@
               <li>Módulo de documentación centralizado para clientes.</li>
               <li>Liquidación de sueldos con novedades cargadas digitalmente.</li>
               <li>Cuatro perfiles con permisos diferenciados.</li>
+              <li>Carga masiva de vencimientos (desde Excel) y de documentos de un cliente, y vencimientos para varios clientes a la vez según la terminación del CUIT.</li>
+              <li>Asistente de IA que responde consultas y lee la carpeta de documentos de un cliente.</li>
             </ul>
           </div>
         </div>
@@ -935,7 +943,7 @@
         </div>
         <div class="callout info">
           <div class="callout-label">Cliente</div>
-          <p>Gabriel Eduardo Casil, contador público, titular del Estudio Casil Rodríguez (ECR), con 50 años de trayectoria en Tres de Febrero, GBA.</p>
+          <p>Gabriel Eduardo Casil, contador público, titular del Estudio Casil Rodríguez (ECR), con 50 años de trayectoria en San Martín, GBA.</p>
         </div>
       </section>
 
@@ -1005,6 +1013,11 @@
           <li>Módulo de documentación: subida y organización de comprobantes por cliente.</li>
           <li>Carga de novedades de sueldos (inasistencias, altas y bajas) por parte del cliente.</li>
           <li>Dashboard con estado general de vencimientos, documentación y alertas activas.</li>
+          <li>Filtros tipo Excel y selección múltiple (con confirmación) para depurar la cartera de clientes.</li>
+          <li>Calendario de vencimientos con colores por tipo y por cliente, y carga de vencimientos para varios clientes o masiva desde Excel / CSV.</li>
+          <li>Archivo digital con una carpeta por cliente, buscador, carga masiva de archivos y borrado múltiple.</li>
+          <li>Reportes con totales mensual y anual y gráficos de honorarios por servicio.</li>
+          <li>Asistente de IA para consultas del estudio y sobre la carpeta de documentos de cada cliente.</li>
         </ul>
       </section>
 
@@ -1015,19 +1028,19 @@
 
         <div class="user-tbl admin">
           <div class="row"><div class="k">Perfil</div><div class="v"><strong>Administrador del estudio</strong></div></div>
-          <div class="row"><div class="k">Acceso</div><div class="v">Total: gestión de usuarios, clientes, vencimientos y configuración general</div></div>
+          <div class="row"><div class="k">Acceso</div><div class="v">Total: gestión de usuarios, clientes, vencimientos y configuración general. Es el único perfil que accede al apartado Sistema (Usuarios y Configuración)</div></div>
           <div class="row"><div class="k">Experiencia técnica</div><div class="v">Media — personal administrativo del estudio, no técnico</div></div>
         </div>
 
         <div class="user-tbl contador">
           <div class="row"><div class="k">Perfil</div><div class="v"><strong>Contador</strong></div></div>
-          <div class="row"><div class="k">Acceso</div><div class="v">Carga y revisión de extractos, imputaciones, vencimientos y liquidaciones</div></div>
+          <div class="row"><div class="k">Acceso</div><div class="v">Carga y revisión de clientes, vencimientos, documentos, extractos, imputaciones y liquidaciones. No accede al apartado Sistema</div></div>
           <div class="row"><div class="k">Experiencia técnica</div><div class="v">Media-alta — usuario avanzado del sistema contable de base</div></div>
         </div>
 
         <div class="user-tbl cliente">
           <div class="row"><div class="k">Perfil</div><div class="v"><strong>Cliente PyME</strong></div></div>
-          <div class="row"><div class="k">Acceso</div><div class="v">Carga de documentación y novedades propias, consulta de su propio estado contable</div></div>
+          <div class="row"><div class="k">Acceso</div><div class="v">Carga de documentación y novedades propias, consulta de su propio estado contable. Solo ve los datos de su empresa (Agenda, Documentos y Asistente)</div></div>
           <div class="row"><div class="k">Experiencia técnica</div><div class="v">Baja — no son usuarios técnicos, la interfaz debe ser autoexplicativa</div></div>
         </div>
 
@@ -1082,12 +1095,19 @@
               <tr><td class="id-cell">RF06</td><td><span class="badge media">Media</span></td><td>Dashboard unificado con estado de vencimientos, documentación y alertas activas.</td><td>Necesidad de visión global</td></tr>
               <tr><td class="id-cell">RF07</td><td><span class="badge media">Media</span></td><td>Acceso desde celular para los flujos críticos de los clientes PyME.</td><td>Visión del sistema expresada por Casil</td></tr>
               <tr><td class="id-cell">RF08</td><td><span class="badge baja">Fuera del MVP</span></td><td>Asistencia por IA para leer extractos bancarios y proponer asientos contables.</td><td>"Que nos traiga la info directamente imputada"</td></tr>
+              <tr><td class="id-cell">RF09</td><td><span class="badge alta">Alta</span></td><td>Cartera de clientes con filtros tipo Excel por columna (valores, búsqueda, orden, terminación de CUIT y rango de honorarios), selección múltiple y borrado con confirmación.</td><td>Pedido del cliente · prueba piloto</td></tr>
+              <tr><td class="id-cell">RF10</td><td><span class="badge alta">Alta</span></td><td>Calendario de vencimientos con colores por tipo y por cliente, más de tres vencimientos por día, selector de mes y año, y borrado individual o múltiple.</td><td>Pedido del cliente · prueba piloto</td></tr>
+              <tr><td class="id-cell">RF11</td><td><span class="badge alta">Alta</span></td><td>Alta de un mismo vencimiento para varios clientes a la vez, con fechas según el último dígito del CUIT (calendario consultado en TRIVIA).</td><td>Pedido del cliente · prueba piloto</td></tr>
+              <tr><td class="id-cell">RF12</td><td><span class="badge alta">Alta</span></td><td>Carga masiva de vencimientos pegando filas desde Excel o con un archivo CSV, con plantilla descargable y vista previa.</td><td>Pedido del cliente · prueba piloto</td></tr>
+              <tr><td class="id-cell">RF13</td><td><span class="badge alta">Alta</span></td><td>Archivo digital con una carpeta por cliente, buscador, carga masiva de archivos de un cliente (tipo sugerido automáticamente, hasta 9 MB por archivo) y borrado múltiple.</td><td>Pedido del cliente · prueba piloto</td></tr>
+              <tr><td class="id-cell">RF14</td><td><span class="badge media">Media</span></td><td>Reportes con total mensual y anual de honorarios y gráfico de barras o circular por servicio.</td><td>Pedido del cliente · prueba piloto</td></tr>
+              <tr><td class="id-cell">RF15</td><td><span class="badge media">Media</span></td><td>Asistente de IA (Google Gemini) para consultas del estudio y sobre la carpeta de documentos de un cliente, con respuestas orientativas que revisa el contador.</td><td>Pedido del cliente · alcance acotado de RF08</td></tr>
             </tbody>
           </table>
         </div>
         <div class="callout info">
           <div class="callout-label">Alcance confirmado</div>
-          <p>RF08 (IA para extractos) queda fuera del MVP. Se documenta como parte de la evolución prevista del sistema (ver sección 16).</p>
+          <p>RF08 (IA para leer extractos y proponer asientos) queda fuera del MVP y se documenta como evolución prevista (ver sección 16). Lo que sí está disponible es el Asistente de consultas (RF15), que no imputa asientos ni modifica datos.</p>
         </div>
       </section>
 
@@ -1115,20 +1135,21 @@
         <p>
           Interfaz web responsive, pensada primero para escritorio (uso interno del estudio) y adaptada a celular
           para los flujos de carga de los clientes PyME (documentación y novedades de sueldos). El menú lateral
-          fijo organiza las pantallas en tres bloques: Gestión, Herramientas y Sistema.
+          fijo organiza las pantallas en tres bloques: Gestión, Herramientas y Sistema (este último visible solo para administradores).
         </p>
         <div class="table-wrap">
           <table>
             <thead><tr><th style="width:150px">Pantalla</th><th>Descripción</th></tr></thead>
             <tbody>
-              <tr><td class="id-cell">Login</td><td>Acceso con email y contraseña. Presenta la identidad del estudio (marca "EC", cita institucional y los 50 años de trayectoria en Tres de Febrero) junto al formulario de ingreso.</td></tr>
+              <tr><td class="id-cell">Login</td><td>Acceso con email y contraseña. Presenta la identidad del estudio (logo ECR 50 años, cita institucional y localidad San Martín) junto al formulario de ingreso. Si hay un error indica si fue en el correo o en la contraseña, y permite recuperar la contraseña.</td></tr>
               <tr><td class="id-cell">Panel general</td><td>Dashboard con cuatro indicadores clave (clientes activos, vencimientos a 7 días, documentos en archivo, honorarios del mes), el listado de próximos vencimientos con alertas y la cartera de clientes reciente.</td></tr>
-              <tr><td class="id-cell">Clientes</td><td>Cartera de clientes del estudio en tabla (empresa, CUIT, servicio contratado, honorarios y estado), con alta, edición y baja de clientes.</td></tr>
-              <tr><td class="id-cell">Agenda</td><td>Calendario mensual de vencimientos impositivos y laborales, con vista de Calendario o Lista y alta de nuevos vencimientos.</td></tr>
-              <tr><td class="id-cell">Documentos</td><td>Archivo digital centralizado: cada documento se sube con su tipo (por ejemplo, Balance), cliente asociado y fecha, con acceso directo para verlo.</td></tr>
-              <tr><td class="id-cell">Asistente</td><td>Chat de consultas del estudio con accesos rápidos (vencimientos ARCA, mis vencimientos, dólar hoy, explicar un tema), que responde preguntas y busca información actualizada en ARCA y la web.</td></tr>
-              <tr><td class="id-cell">Reportes</td><td>Métricas y análisis del estudio: facturación anual proyectada, ticket promedio por cliente, porcentaje de cumplimiento de vencimientos y documentos por cliente, con un gráfico de honorarios por servicio.</td></tr>
-              <tr><td class="id-cell">Configuración</td><td>Datos del estudio (nombre, titular, localidad, días de anticipación de alertas) y conexión del asistente de IA mediante clave de API.</td></tr>
+              <tr><td class="id-cell">Clientes</td><td>Cartera de clientes del estudio en tabla (empresa, CUIT, servicio contratado, honorarios y estado), con alta, edición y baja de clientes. Cada columna tiene filtros tipo Excel y se pueden seleccionar varios clientes para eliminarlos con confirmación.</td></tr>
+              <tr><td class="id-cell">Agenda</td><td>Calendario mensual de vencimientos impositivos y laborales, con vista de Calendario o Lista. El calendario usa colores por tipo y por cliente, muestra los vencimientos de cada día y permite elegir mes y año. Permite alta individual, para varios clientes (por terminación de CUIT) y carga masiva desde Excel / CSV, con borrado individual o múltiple.</td></tr>
+              <tr><td class="id-cell">Documentos</td><td>Archivo digital centralizado: cada documento se sube con su tipo (por ejemplo, Balance), cliente asociado y fecha, con acceso directo para verlo. Se organiza en una carpeta por cliente con buscador, carga masiva de archivos y borrado múltiple.</td></tr>
+              <tr><td class="id-cell">Asistente</td><td>Chat de consultas del estudio con accesos rápidos (vencimientos ARCA, mis vencimientos, dólar hoy, explicar un tema), que responde preguntas y busca información actualizada en ARCA y la web. Permite elegir la carpeta de un cliente para consultar sus documentos.</td></tr>
+              <tr><td class="id-cell">Reportes</td><td>Métricas y análisis del estudio: total mensual y anual de honorarios, ticket promedio por cliente, porcentaje de cumplimiento de vencimientos y documentos por cliente, con un gráfico de honorarios por servicio (barras o circular).</td></tr>
+              <tr><td class="id-cell">Usuarios</td><td>Solo administradores. Alta y edición de usuarios con su rol (Administrador, Contador, Cliente PyME o Solo lectura) y, para clientes PyME, la empresa asociada.</td></tr>
+              <tr><td class="id-cell">Configuración</td><td>Solo administradores. Datos del estudio (nombre, titular, localidad, días de anticipación de alertas). La conexión del asistente de IA está configurada en el servidor.</td></tr>
             </tbody>
           </table>
         </div>
@@ -1234,11 +1255,11 @@
       <section id="software-comm">
         <h2><span class="num">22</span>Software y comunicaciones</h2>
         <div class="stack">
-          <div class="stack-layer"><span class="tag">FRONT</span><div><div class="title">HTML + CSS</div><div class="desc">Interfaz web (<span class="mono">index.html</span>), diseño responsive</div></div></div>
+          <div class="stack-layer"><span class="tag">FRONT</span><div><div class="title">HTML + CSS + JavaScript</div><div class="desc">Interfaz web (<span class="mono">index.html</span>), diseño responsive</div></div></div>
           <div class="stack-layer"><span class="tag">BACK</span><div><div class="title">Node.js + Express</div><div class="desc">API del sistema (carpeta <span class="mono">ecr-railway</span>); reemplaza al backend original en PHP</div></div></div>
           <div class="stack-layer"><span class="tag">DB</span><div><div class="title">MySQL</div><div class="desc">Base de datos relacional, provisionada como servicio en Railway</div></div></div>
           <div class="stack-layer"><span class="tag">HOST</span><div><div class="title">Railway</div><div class="desc">Hosting del backend y de la base de datos (proyecto <span class="mono">lovely-optimism</span>)</div></div></div>
-          <div class="stack-layer"><span class="tag">IA</span><div><div class="title">OpenAI API</div><div class="desc">Prevista para una etapa futura (RF08, fuera del MVP): lectura de extractos bancarios y propuesta de asientos contables</div></div></div>
+          <div class="stack-layer"><span class="tag">IA</span><div><div class="title">Google Gemini API</div><div class="desc">Asistente de consultas del estudio y lectura de la carpeta de documentos de un cliente (RF15). La lectura automática de extractos y la propuesta de asientos (RF08) siguen fuera del MVP</div></div></div>
           <div class="stack-layer"><span class="tag">REPO</span><div><div class="title">GitHub</div><div class="desc"><span class="mono">Proyecto2026-estudio/ECR-SISTEMA</span> (repo actual) · control de versiones del equipo</div></div></div>
         </div>
         <div class="callout info">
@@ -1340,29 +1361,30 @@
             <tbody>
               <tr><td>Hosting Railway (backend + MySQL + frontend)</td><td class="id-cell">USD 5 / mes</td></tr>
               <tr><td>Claude AI (asistencia de desarrollo)</td><td class="id-cell">$ 33.000 ARS / mes</td></tr>
-              <tr><td>API de IA para RF08 (lectura de extractos, fuera del MVP)</td><td class="id-cell">Gratis por ahora · pasará a $1.000 ARS / mes</td></tr>
+              <tr><td>API de IA (Google Gemini) para el Asistente</td><td class="id-cell">Gratis por ahora · pasará a $1.000 ARS / mes</td></tr>
             </tbody>
           </table>
         </div>
         <div class="callout info">
           <div class="callout-label">Nota</div>
-          <p>La API de IA para RF08 hoy no genera costo porque ese requerimiento quedó fuera del alcance del MVP; el valor de $1.000 ARS/mes es el que empezaría a facturarse si en el futuro se habilita ese módulo.</p>
+          <p>La API de IA hoy funciona con el plan gratuito de Gemini, por lo que no genera costo. El valor de $1.000 ARS/mes es el que empezaría a facturarse al pasar a un plan pago.</p>
         </div>
       </section>
 
       <!-- 28. ESTIMACIÓN ECONÓMICA -->
       <section id="estimacion">
         <h2><span class="num">27</span>Estimación económica y horas</h2>
-        <p>Horas de trabajo estimadas, divididas entre el Project Manager y el resto del equipo, según el Gantt del proyecto (inicio 4/4/26, fin previsto 14/11/26 — 402 días).</p>
+        <p>Horas de trabajo estimadas, divididas entre el Project Manager y el resto del equipo, según el Gantt del proyecto (inicio 4/4/26, fin previsto 14/11/26 — 402 días). Las horas de cada perfil son las completadas por responsable, actualizadas al 30/10/2026.</p>
         <div class="table-wrap">
           <table>
             <thead><tr><th style="width:220px">Perfil profesional / Rubro</th><th style="width:80px">Horas</th><th>Módulos asignados</th></tr></thead>
             <tbody>
-              <tr><td class="id-cell">Project Manager — Di Menna, Máximo</td><td>46 hs</td><td>Gestión, seguimiento del Gantt, coordinación de la Etapa 01 (relevamiento y definición del proyecto) y nexo con el cliente.</td></tr>
-              <tr><td class="id-cell">Diseño UX/UI — Ippolito, Gonzalo</td><td>145 hs</td><td>Investigación de UI/UX, wireframes, mockup de pantalla principal y adaptación responsive (Etapa 02, principalmente).</td></tr>
-              <tr><td class="id-cell">Desarrollo Front/Back — Loureiro, Valentín</td><td>148 hs</td><td>Frontend, integración full-stack, login y permisos (Etapas 03 y 04).</td></tr>
-              <tr><td class="id-cell">Desarrollo Back End — Pereyra, Tomás</td><td>143 hs</td><td>Base de datos, backend y migración de AlwaysData a Railway (Etapas 03 y 04).</td></tr>
-              <tr style="background:var(--code-bg);font-weight:600;"><td colspan="2">Subtotal Gantt técnico</td><td>482 hs</td></tr>
+              <tr><td class="id-cell">Project Manager — Di Menna, Máximo</td><td>103 hs</td><td>Gestión, seguimiento del Gantt, relevamiento y definición del proyecto (Etapa 01), definición de permisos, documentación y pruebas piloto, y nexo con el cliente.</td></tr>
+              <tr><td class="id-cell">Diseño UX/UI — Ippolito, Gonzalo</td><td>119 hs</td><td>Investigación de UI/UX, wireframes, mockup de pantalla principal y adaptación responsive (Etapa 02), más documentación y pruebas piloto.</td></tr>
+              <tr><td class="id-cell">Desarrollo Front/Back — Loureiro, Valentín</td><td>181 hs</td><td>Frontend, integración full-stack, login y permisos (Etapas 03 y 04), landing page, despliegue en Railway y cambios de las pruebas piloto.</td></tr>
+              <tr><td class="id-cell">Desarrollo Back End — Pereyra, Tomás</td><td>166 hs</td><td>Base de datos, backend y migración de AlwaysData a Railway (Etapas 03 y 04), Linktree y pruebas piloto.</td></tr>
+              <tr><td class="id-cell">Desarrollo Back End (D01) — sin integrante asignado</td><td>4 hs</td><td>Cambios solicitados tras la prueba piloto Nº 2 (tarea 6.10 del Gantt).</td></tr>
+              <tr style="background:var(--code-bg);font-weight:600;"><td colspan="2">Subtotal Gantt técnico</td><td>573 hs</td></tr>
               <tr><td class="id-cell">Adm. de Empresas — Checchia, Leonel</td><td>20 hs*</td><td>Análisis económico y estimación de costos del proyecto.</td></tr>
               <tr><td class="id-cell">Adm. de Empresas — Casal, Joaquín</td><td>20 hs*</td><td>Análisis económico y estimación de costos del proyecto.</td></tr>
             </tbody>
@@ -1370,7 +1392,7 @@
         </div>
         <div class="callout info">
           <div class="callout-label">Nota</div>
-          <p>La división del PM y de los tres desarrolladores es una aproximación a partir de las etapas del Gantt (46 hs de la Etapa 01 son enteramente del PM; las 436 hs restantes se reparten entre Ippolito, Loureiro y Pereyra según el foco de cada etapa). Las horas de Checchia y Casal (*) corresponden al análisis económico y no forman parte del total técnico del Gantt (482 hs).</p>
+          <p>Las horas se calculan a partir de las tareas del Gantt asignadas a cada responsable (columna "Completo") y reemplazan la aproximación inicial por etapas (482 hs). Las horas de Checchia y Casal (*) corresponden al análisis económico y no forman parte del total técnico del Gantt (573 hs).</p>
         </div>
       </section>
 
@@ -1384,23 +1406,33 @@
         </div>
 
         <div class="qs-card">
-          <div class="qs-header"><div class="qs-num">2</div><div class="qs-title">Carga de extractos bancarios</div></div>
-          <p>Desde el módulo "Extractos", subir el archivo del banco. El sistema propone la imputación contable para su revisión y confirmación.</p>
+          <div class="qs-header"><div class="qs-num">2</div><div class="qs-title">Clientes</div></div>
+          <p>En "Clientes" se da de alta cada empresa con "+ Cliente". Con la flecha ▾ de cada columna se filtra como en Excel, y con las casillas se seleccionan varios clientes para eliminarlos (el sistema pide confirmación).</p>
         </div>
 
         <div class="qs-card">
           <div class="qs-header"><div class="qs-num">3</div><div class="qs-title">Vencimientos</div></div>
-          <p>El Dashboard muestra los próximos vencimientos impositivos con alertas configurables por anticipación.</p>
+          <p>En "Agenda" se ven los vencimientos en calendario o lista. Se cargan de a uno ("+ Vencimiento"), para varios clientes a la vez según la terminación del CUIT ("+ Varios clientes") o masivamente pegando filas desde Excel ("Carga masiva"). El Panel general muestra los próximos a vencer.</p>
         </div>
 
         <div class="qs-card">
-          <div class="qs-header"><div class="qs-num">4</div><div class="qs-title">Documentación y novedades (clientes PyME)</div></div>
-          <p>Los clientes cargan su documentación y novedades de sueldos desde su propio perfil, sin pasar por mail ni WhatsApp.</p>
+          <div class="qs-header"><div class="qs-num">4</div><div class="qs-title">Documentos</div></div>
+          <p>En "Documentos" hay una carpeta por cliente. Con "Carga masiva" se suben muchos PDF o imágenes de un mismo cliente de una vez (hasta 9 MB cada uno), y dentro de la carpeta se pueden seleccionar varios para eliminarlos.</p>
+        </div>
+
+        <div class="qs-card">
+          <div class="qs-header"><div class="qs-num">5</div><div class="qs-title">Asistente y reportes</div></div>
+          <p>El "Asistente" responde consultas y, eligiendo la carpeta de un cliente, lee sus documentos. En "Reportes" se ven los totales mensual y anual de honorarios y el gráfico por servicio. Los clientes PyME solo ven sus propios vencimientos y documentos.</p>
+        </div>
+
+        <div class="callout info" style="margin-top:20px;">
+          <div class="callout-label">Manual de usuario</div>
+          <p>La explicación paso a paso de cada pantalla está en el <a href="https://proyecto2026-estudio.github.io/DocumentacionEC/Manual_Uso_ECR.pdf" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600;text-decoration:underline;">Manual de uso v2.0 (PDF) ↗</a>.</p>
         </div>
 
         <div class="callout ok" style="margin-top:20px;">
           <div class="callout-label">A partir de aquí</div>
-          <p>El equipo sigue avanzando con las etapas de RRHH y liquidación de sueldos, el módulo de documentación y el testing final con el cliente, antes de la entrega de noviembre.</p>
+          <p>Completadas las dos pruebas piloto con el personal del estudio y los cambios solicitados, el equipo prepara la entrega final antes del 14 de noviembre.</p>
         </div>
       </section>
 
@@ -1431,17 +1463,37 @@
 
         <div class="faq-item">
           <p class="faq-q"><span class="q-mark">P.</span>¿Cómo busco rápido un cliente o un vencimiento?</p>
-          <p class="faq-a">Con el campo Buscar de la parte superior del panel, que filtra en tiempo real tanto la tabla de clientes como la de vencimientos a medida que se escribe.</p>
+          <p class="faq-a">Con el campo Buscar de la parte superior del panel, que filtra en tiempo real. En Clientes también se puede filtrar como en Excel con la flecha ▾ de cada columna, y en Documentos con la lupa de la pantalla (busca por cliente o por nombre de documento).</p>
         </div>
 
         <div class="faq-item">
           <p class="faq-q"><span class="q-mark">P.</span>¿Qué pasa si elimino un cliente o un documento por error?</p>
-          <p class="faq-a">El sistema pide una confirmación antes de borrar cualquier cliente o documento, para evitar eliminaciones accidentales.</p>
+          <p class="faq-a">El sistema pide una confirmación en una ventana antes de borrar cualquier cliente, vencimiento o documento (también cuando se borran varios a la vez), para evitar eliminaciones accidentales. La baja no se puede deshacer.</p>
         </div>
 
         <div class="faq-item">
           <p class="faq-q"><span class="q-mark">P.</span>¿Necesito conectar algo para usar el Asistente?</p>
-          <p class="faq-a">Sí, un administrador debe conectar una clave de Google Gemini desde Configuración; sin esa clave el Asistente no puede responder consultas ni buscar información actualizada en ARCA o la web.</p>
+          <p class="faq-a">No. La conexión con Google Gemini ya está configurada en el servidor, así que el Asistente funciona directamente. Sus respuestas son orientativas y las revisa el contador.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q"><span class="q-mark">P.</span>No puedo ingresar: ¿qué significa el mensaje que aparece?</p>
+          <p class="faq-a">El sistema indica en qué se produjo el error. "El correo electrónico no está registrado" significa que el correo está mal escrito o no tiene usuario; "La contraseña es incorrecta" significa que el correo existe pero la contraseña no coincide (importan mayúsculas y minúsculas).</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q"><span class="q-mark">P.</span>¿Cómo cargo el mismo vencimiento para muchos clientes?</p>
+          <p class="faq-a">Desde Agenda, con "+ Varios clientes": se eligen los clientes (o se marcan por terminación del CUIT) y se asigna una misma fecha o una fecha por cada dígito. Para cargar muchos vencimientos juntos se usa "Carga masiva", pegando las filas desde Excel o con un archivo CSV.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q"><span class="q-mark">P.</span>¿Cómo subo muchos documentos de un mismo cliente?</p>
+          <p class="faq-a">Desde Documentos, con "Carga masiva": se elige el cliente, se arrastran los archivos (hasta 9 MB cada uno) y se revisa el tipo de cada documento antes de subirlos.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q"><span class="q-mark">P.</span>¿Quién puede ver Usuarios y Configuración?</p>
+          <p class="faq-a">Solo el rol Administrador. El rol Solo lectura consulta sin poder modificar datos, y el rol Cliente PyME solo ve los vencimientos y documentos de su propia empresa.</p>
         </div>
 
         <div class="faq-item">
@@ -1498,6 +1550,27 @@
                 <td>Se pierde el acceso al hosting en AlwaysData; el equipo migra el backend a Node.js/Express y lo despliega en Railway (proyecto <span class="mono">lovely-optimism</span>).</td>
                 <td>Verificar el funcionamiento integral del sistema migrado.</td>
               </tr>
+              <tr>
+                <td class="id-cell">28/09 → 02/10</td>
+                <td><strong>Prueba piloto Nº 1</strong><br><span style="font-size:11px;color:var(--ink-3);">Reunión con el personal</span></td>
+                <td>PM, UX/UI, BD, D02</td>
+                <td><strong>Objetivo:</strong> reunión con el personal del estudio, entrega de los documentos necesarios para usar el sistema y charla sobre la web; entrevista con el dueño y devolución de la prueba.<br><strong>Decisiones:</strong> el estudio solicita cambios sobre clientes, agenda, documentos y reportes.</td>
+                <td>Implementar los cambios solicitados y revisar el funcionamiento completo.</td>
+              </tr>
+              <tr>
+                <td class="id-cell">12/10 → 20/10</td>
+                <td><strong>Prueba piloto Nº 2</strong></td>
+                <td>PM, UX/UI, BD, D02</td>
+                <td><strong>Objetivo:</strong> entrega de la segunda versión de prueba y devolución del estudio.<br><strong>Resultado:</strong> devolución del estudio sobre la segunda versión (tareas 6.8 y 6.9 del Gantt).</td>
+                <td>Incorporar los cambios solicitados.</td>
+              </tr>
+              <tr>
+                <td class="id-cell">26/10 → 30/10</td>
+                <td><strong>Cambios de la prueba piloto Nº 2</strong></td>
+                <td>Desarrollo, UX/UI</td>
+                <td>Se incorporan los cambios pedidos por el cliente (ver control de cambios v2.1) y se actualiza la documentación y el manual de usuario.</td>
+                <td>Preparar la entrega final.</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -1511,7 +1584,7 @@
 
       <!-- FOOTER -->
       <div class="footer">
-        <div>Sistema de Gestión Contable · ERS v2.0 Revisado · Equipo Nº 8</div>
+        <div>Sistema de Gestión Contable · ERS v2.1 Actualizado · Equipo Nº 8</div>
         <div class="mono">Estudio Casil Rodríguez · Instituto Leonardo Murialdo 2026</div>
       </div>
 
