@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sistema de Gestión Contable — Carpeta del Proyecto ERS · ECR (v2.4)</title>
+<title>Sistema de Gestión Contable — Carpeta del Proyecto ERS · ECR (v2.3)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -595,7 +595,7 @@
       <div class="brand-mark">ECR</div>
       <div class="brand-text">
         <div class="title">Gestión Contable ECR</div>
-        <div class="subtitle">v2.4 · ERS Proyecto Escolar</div>
+        <div class="subtitle">v2.3 · ERS Proyecto Escolar</div>
       </div>
     </div>
 
@@ -627,7 +627,7 @@
         <li><a href="#perspectiva"><span class="num">11</span>Perspectiva del producto</a></li>
         <li><a href="#funcionalidades"><span class="num">12</span>Funcionalidades de alto nivel</a></li>
         <li><a href="#usuarios"><span class="num">13</span>Perfil de usuarios (UTN)</a></li>
-        <li><a href="#restricciones"><span class="num">14</span>Restricciones y marco legal</a></li>
+        <li><a href="#restricciones"><span class="num">14</span>Restricciones impuestas</a></li>
         <li><a href="#suposiciones"><span class="num">15</span>Suposiciones y dependencias</a></li>
         <li><a href="#evolucion"><span class="num">16</span>Evolución previsible</a></li>
       </ul>
@@ -675,7 +675,7 @@
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:20px; margin-bottom:12px;">
           <div class="eyebrow" style="margin-bottom:0;">
             <span class="dot"></span>
-            ERS v2.4 · Evaluación de Proyectos 2026 · Equipo Nº 8
+            ERS v2.3 · Evaluación de Proyectos 2026 · Equipo Nº 8
           </div>
           <div class="institutional-badge" style="display:flex; align-items:center; gap:10px; background:var(--surface); border:1px solid var(--line); padding:6px 12px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.2); flex-shrink:0;">
             <div style="width:34px;height:34px;border-radius:4px;background:var(--accent);display:grid;place-items:center;color:#06140d;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;">ILM</div>
@@ -692,8 +692,8 @@
           mail y WhatsApp por un único sistema con perfiles diferenciados para el estudio y sus clientes PyME.
         </p>
         <div class="meta-strip">
-          <div class="item"><div class="label">Versión</div><div class="value">2.4 (Actualizado)</div></div>
-          <div class="item"><div class="label">Fecha</div><div class="value">12/11/2026</div></div>
+          <div class="item"><div class="label">Versión</div><div class="value">2.3 (Actualizado)</div></div>
+          <div class="item"><div class="label">Fecha</div><div class="value">04/11/2026</div></div>
           <div class="item"><div class="label">Cliente</div><div class="value">Gabriel Eduardo Casil (ECR)</div></div>
           <div class="item"><div class="label">Estado</div><div class="value">Prueba piloto · entrega final</div></div>
         </div>
@@ -754,12 +754,6 @@
                 <td>04/11</td>
                 <td>Equipo Nº 8</td>
                 <td><strong>Alertas de vencimientos y mejoras de carga.</strong> Se incorpora el aviso por mail al estudio cuando falten 7 días para un vencimiento (RF23) y una ventana de alerta para administradores y contadores al ingresar, que sigue apareciendo hasta el día del vencimiento (RF22). La carga masiva de vencimientos pasa a una grilla con una celda por columna, donde se puede pegar directo desde Excel (RF20). Cada cliente puede tener un mail asociado a sus alertas (RF21). Se actualizan alcance, limitaciones, requerimientos, pantallas, costos, guía rápida, FAQ y bitácora.</td>
-              </tr>
-              <tr>
-                <td class="id-cell">2.4</td>
-                <td>12/11</td>
-                <td>Equipo Nº 8</td>
-                <td><strong>Marco legal y pendientes.</strong> Se agrega a la sección 14 el relevamiento de las normas argentinas que alcanzan al sistema y al asistente de IA (protección de datos personales, transferencia internacional, secreto profesional) con el estado de cumplimiento y los pendientes, para validarlo con un profesional en inteligencia artificial.</td>
               </tr>
             </tbody>
           </table>
@@ -1092,38 +1086,11 @@
 
       <!-- 14. RESTRICCIONES -->
       <section id="restricciones">
-        <h2><span class="num">14</span>Restricciones y marco legal</h2>
+        <h2><span class="num">14</span>Restricciones impuestas</h2>
         <ul>
           <li>Los permisos de cada perfil se validan en el backend, no solo en la interfaz.</li>
           <li>Los datos impositivos y financieros de las PyME deben viajar cifrados.</li>
           <li>El sistema debe poder crecer a más clientes, usuarios y módulos sin rediseñar la base.</li>
-          <li>Los honorarios y el apartado Reportes son exclusivos del rol administrador, también en el servidor.</li>
-        </ul>
-
-        <h3 style="margin-top:1.6rem">Marco legal aplicable (Argentina)</h3>
-        <p>Relevamiento del equipo, <strong>no es asesoramiento jurídico</strong>: queda sujeto a revisión de un profesional. Se pone el foco en el asistente virtual y en la lectura de extractos con IA, que son los módulos que envían información a un proveedor externo (Google Gemini).</p>
-        <div class="table-wrap">
-          <table>
-            <thead><tr><th style="width:230px">Norma</th><th>Qué exige</th><th style="width:300px">Estado en el sistema</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Ley 25.326</strong> de Protección de Datos Personales y Decreto 1558/2001</td><td>Consentimiento, finalidad, calidad y seguridad de los datos; deber de confidencialidad; derechos de acceso, rectificación y supresión. Autoridad de aplicación: AAIP.</td><td>Parcial. Hay roles y control en servidor, y al asistente no se le envían CUIT ni honorarios. Faltan política de privacidad, consentimiento y proceso de supresión.</td></tr>
-              <tr><td><strong>Ley 25.326, art. 12</strong> · transferencia internacional</td><td>Restringe enviar datos a países sin nivel adecuado de protección, salvo contrato con cláusulas o consentimiento.</td><td>Pendiente. Gemini procesa en servidores del exterior. No hay contrato ni cláusulas firmadas; el plan pago de Gemini está previsto en "próximos pasos".</td></tr>
-              <tr><td><strong>Registro ante la AAIP</strong></td><td>Inscripción de las bases de datos personales de quien las trata.</td><td>Pendiente de consulta si corresponde al estudio.</td></tr>
-              <tr><td><strong>Ley 20.488</strong> y normas del Consejo Profesional de Ciencias Económicas</td><td>Secreto profesional del contador sobre la información de sus clientes.</td><td>Parcial. La IA solo propone y el contador confirma (RNF-07). Falta definir qué documentos reales pueden enviarse a una IA externa.</td></tr>
-              <tr><td><strong>Ley 26.388</strong> de delitos informáticos</td><td>Penaliza el acceso ilegítimo a sistemas y datos.</td><td>Cubierto en lo técnico: sesión obligatoria, roles y clave de la IA guardada solo en el servidor.</td></tr>
-              <tr><td><strong>Inteligencia artificial</strong></td><td>Hasta donde se relevó, no hay una ley argentina específica vigente; existen proyectos en el Congreso.</td><td>A verificar con el profesional.</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h3 style="margin-top:1.6rem">Pendientes de cumplimiento</h3>
-        <ul>
-          <li>Redactar política de privacidad y obtener el consentimiento de los clientes, informando que parte de los datos se procesa con una IA externa.</li>
-          <li>Pasar a un plan pago de Gemini y revisar las cláusulas de tratamiento de datos antes de usar extractos reales, o evaluar un proveedor con servidores en un país con protección adecuada.</li>
-          <li>Consultar la obligación de registrar la base de datos ante la AAIP.</li>
-          <li>Incorporar registro de accesos, plazos de conservación y un procedimiento para pedidos de acceso, rectificación y supresión.</li>
-          <li>Agregar al asistente un aviso de que sus respuestas no reemplazan el criterio profesional del contador.</li>
-          <li>Hasta resolverlo, la lectura de extractos se prueba solo con datos de ejemplo.</li>
         </ul>
       </section>
 
@@ -1732,13 +1699,6 @@
                 <td>Desarrollo, UX/UI</td>
                 <td>Se agrega el mail asociado a cada cliente, la grilla de pegado en la carga masiva de vencimientos, la ventana de alerta al ingresar y el aviso por mail al estudio a los 7 días, enviado desde Gmail mediante un script de Google (el hosting bloquea el envío directo de mails).</td>
                 <td>Revisar con el estudio los avisos recibidos y decidir si también se avisa a los clientes.</td>
-              </tr>
-              <tr>
-                <td class="id-cell">12/11</td>
-                <td><strong>Marco legal y permisos</strong><br><span style="font-size:11px;color:var(--ink-3);">Versión 2.4</span></td>
-                <td>Equipo Nº 8</td>
-                <td>Reportes y honorarios pasan a ser exclusivos del administrador (pantalla y servidor), y se mejora el uso desde el celular con un menú desplegable. Se relevan las normas argentinas que alcanzan al asistente de IA y se documentan los pendientes en la sección 14.</td>
-                <td>Validar el marco legal con un profesional en inteligencia artificial y definir política de privacidad y plan pago de Gemini.</td>
               </tr>
             </tbody>
           </table>
