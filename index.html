@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Sistema de Gestión Contable — Carpeta del Proyecto ERS · ECR (v2.3)</title>
+<title>Sistema de Gestión Contable — Carpeta del Proyecto ERS · ECR (v3.0 · Final)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -595,7 +595,7 @@
       <div class="brand-mark">ECR</div>
       <div class="brand-text">
         <div class="title">Gestión Contable ECR</div>
-        <div class="subtitle">v2.3 · ERS Proyecto Escolar</div>
+        <div class="subtitle">v3.0 Final · ERS Proyecto Escolar</div>
       </div>
     </div>
 
@@ -664,6 +664,19 @@
         <li><a href="#bitacora"><span class="num">30</span>Bitácora del proyecto</a></li>
       </ul>
     </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title">Documentación Técnica</div>
+      <ul>
+        <li><a href="#tec-intro"><span class="num">31</span>Las partes del sistema</a></li>
+        <li><a href="#tec-frontend"><span class="num">32</span>La página web (Frontend)</a></li>
+        <li><a href="#tec-backend"><span class="num">33</span>El servidor (Backend)</a></li>
+        <li><a href="#tec-bd"><span class="num">34</span>La base de datos</a></li>
+        <li><a href="#tec-integraciones"><span class="num">35</span>Integraciones externas</a></li>
+        <li><a href="#tec-recorrido"><span class="num">36</span>Recorrido de punta a punta</a></li>
+        <li><a href="#tec-herramientas"><span class="num">37</span>Herramientas utilizadas</a></li>
+      </ul>
+    </div>
   </aside>
 
   <!-- ================= MAIN ================= -->
@@ -675,7 +688,7 @@
         <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:20px; margin-bottom:12px;">
           <div class="eyebrow" style="margin-bottom:0;">
             <span class="dot"></span>
-            ERS v2.3 · Evaluación de Proyectos 2026 · Equipo Nº 8
+            ERS v3.0 · Versión final · Proyecto Final 2026 · Equipo Nº 8
           </div>
           <div class="institutional-badge" style="display:flex; align-items:center; gap:10px; background:var(--surface); border:1px solid var(--line); padding:6px 12px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,0.2); flex-shrink:0;">
             <div style="width:34px;height:34px;border-radius:4px;background:var(--accent);display:grid;place-items:center;color:#06140d;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;">ILM</div>
@@ -687,15 +700,15 @@
         </div>
         <h1>Sistema de Gestión Contable Integral</h1>
         <p class="lede">
-          Plataforma web para centralizar vencimientos impositivos, integración bancaria, documentación de clientes
-          y liquidación de sueldos del <strong>Estudio Casil Rodríguez (ECR)</strong>, reemplazando planillas Excel,
+          Plataforma web que centraliza los vencimientos impositivos, la lectura de extractos bancarios con IA, la documentación
+          de clientes y un asistente de consultas del <strong>Estudio Casil Rodríguez (ECR)</strong>, reemplazando planillas Excel,
           mail y WhatsApp por un único sistema con perfiles diferenciados para el estudio y sus clientes PyME.
         </p>
         <div class="meta-strip">
-          <div class="item"><div class="label">Versión</div><div class="value">2.3 (Actualizado)</div></div>
-          <div class="item"><div class="label">Fecha</div><div class="value">04/11/2026</div></div>
+          <div class="item"><div class="label">Versión</div><div class="value">3.0 (Final)</div></div>
+          <div class="item"><div class="label">Fecha</div><div class="value">17/11/2026</div></div>
           <div class="item"><div class="label">Cliente</div><div class="value">Gabriel Eduardo Casil (ECR)</div></div>
-          <div class="item"><div class="label">Estado</div><div class="value">Prueba piloto · entrega final</div></div>
+          <div class="item"><div class="label">Estado</div><div class="value">Finalizado · en producción</div></div>
         </div>
       </div>
 
@@ -754,6 +767,12 @@
                 <td>04/11</td>
                 <td>Equipo Nº 8</td>
                 <td><strong>Alertas de vencimientos y mejoras de carga.</strong> Se incorpora el aviso por mail al estudio cuando falten 7 días para un vencimiento (RF23) y una ventana de alerta para administradores y contadores al ingresar, que sigue apareciendo hasta el día del vencimiento (RF22). La carga masiva de vencimientos pasa a una grilla con una celda por columna, donde se puede pegar directo desde Excel (RF20). Cada cliente puede tener un mail asociado a sus alertas (RF21). Se actualizan alcance, limitaciones, requerimientos, pantallas, costos, guía rápida, FAQ y bitácora.</td>
+              </tr>
+              <tr>
+                <td class="id-cell">3.0</td>
+                <td>17/11</td>
+                <td>Equipo Nº 8</td>
+                <td><strong>Versión final y definitiva.</strong> Cierre del proyecto: se registra el estado final de cada requerimiento, la pausa de los avisos por mail pedida por el cliente (16/11) y se incorpora la Documentación Técnica del Proyecto Final 2026 (secciones 31 a 37: partes del sistema, frontend, backend, base de datos, integraciones, recorrido de punta a punta y herramientas).</td>
               </tr>
             </tbody>
           </table>
@@ -1112,6 +1131,9 @@
           <li>Lectura de extractos bancarios por IA (RF08): hoy propone la cuenta de cada movimiento y el contador descarga el resultado en CSV. Como evolución, guardar los asientos confirmados en el sistema (o enviarlos al sistema contable de base) y sumar más formatos de bancos.</li>
           <li>Enviar las alertas también a los clientes, usando el mail asociado a cada uno, y poder elegir con cuántos días de anticipación (hoy el aviso al estudio es a los 7 días).</li>
           <li>Filtrar por servidor la lista de vencimientos que se entrega al cliente PyME, para que reciba solo los de su empresa (hoy la pantalla ya muestra solo los suyos).</li>
+          <li>Reactivar los avisos por mail al estudio cuando el cliente lo indique (pausados desde el 16/11/2026).</li>
+          <li>Módulo de liquidación de sueldos con carga digital de novedades (RF04), que no forma parte de la versión final.</li>
+          <li>Mudar el sistema a una nube cercana a Buenos Aires, con más espacio para los archivos de los clientes y datos 100% confidenciales.</li>
         </ul>
       </section>
 
@@ -1151,6 +1173,19 @@
         <div class="callout info">
           <div class="callout-label">Alcance confirmado</div>
           <p>RF08 (lectura de extractos con IA) está construido y en prueba: se activa al cargar en el servidor la clave de un plan pago de Gemini (ver LIM-05). La IA solo propone y el contador confirma; la imputación automática en el sistema contable (RF01) y el guardado de asientos quedan como evolución prevista (ver sección 16). El Asistente de consultas (RF15) no imputa asientos ni modifica datos.</p>
+        </div>
+        <h3><span class="num">17.1</span>Estado final de los requerimientos (17/11/2026)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:220px">Requerimientos</th><th style="width:150px">Estado</th><th>Detalle</th></tr></thead>
+            <tbody>
+              <tr><td class="id-cell">RF02, RF03, RF05–RF07, RF09–RF22</td><td><span class="badge baja">Implementados</span></td><td>Funcionando en <span class="mono">ecr-sistema.up.railway.app</span> y probados con los cuatro roles.</td></tr>
+              <tr><td class="id-cell">RF23</td><td><span class="badge media">Implementado · pausado</span></td><td>El aviso por mail al estudio funciona; a pedido del cliente quedó pausado el 16/11 y se reactiva cuando él lo indique. La ventana de alerta al ingresar (RF22) sigue activa.</td></tr>
+              <tr><td class="id-cell">RF08</td><td><span class="badge media">En prueba</span></td><td>Construido y disponible; queda plenamente activo al cargar la clave del plan pago de Gemini (LIM-05).</td></tr>
+              <tr><td class="id-cell">RF01</td><td><span class="badge media">Parcial</span></td><td>Cubierto por RF08: la IA lee el extracto y propone la imputación, pero el contador la confirma y la descarga en CSV; no se imputa sola en el sistema contable.</td></tr>
+              <tr><td class="id-cell">RF04</td><td><span class="badge alta">No incluido</span></td><td>La liquidación de sueldos no forma parte de la versión final; queda como evolución (sección 16).</td></tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -1415,7 +1450,7 @@
               <tr><td class="id-cell">Hosting y despliegue</td><td>Railway</td><td>Backend, base de datos MySQL y frontend del sistema (proyecto <span class="mono">lovely-optimism</span>).</td></tr>
               <tr><td class="id-cell">Planificación y seguimiento</td><td>Google Sheets</td><td>Cronograma GANTT del proyecto, carga y seguimiento de horas por etapa.</td></tr>
               <tr><td class="id-cell">Comunicación</td><td>WhatsApp / Google Meet</td><td>Sincronizaciones del equipo y reuniones con el cliente.</td></tr>
-              <tr><td class="id-cell">Asistencia de desarrollo (IA)</td><td>Claude AI</td><td>Apoyo del equipo durante el desarrollo y la documentación del proyecto.</td></tr>
+              <tr><td class="id-cell">Asistencia de desarrollo (IA)</td><td>Claude AI (Claude Opus 5.5)</td><td>Apoyo del equipo durante el desarrollo, la migración a Node.js y la documentación del proyecto.</td></tr>
               <tr><td class="id-cell">Asistente del sistema (IA)</td><td>Google Gemini API</td><td>Chat de consultas del estudio dentro del sistema, configurable desde la pantalla de Configuración.</td></tr>
             </tbody>
           </table>
@@ -1522,8 +1557,8 @@
         </div>
 
         <div class="callout ok" style="margin-top:20px;">
-          <div class="callout-label">A partir de aquí</div>
-          <p>Completadas las dos pruebas piloto con el personal del estudio y los cambios solicitados, el equipo prepara la entrega final antes del 14 de noviembre.</p>
+          <div class="callout-label">Estado final</div>
+          <p>Completadas las dos pruebas piloto y los cambios solicitados, el sistema está terminado y en uso en <span class="mono">ecr-sistema.up.railway.app</span>. El recorrido del código está en la Documentación Técnica (secciones 31 a 37).</p>
         </div>
       </section>
 
@@ -1700,6 +1735,20 @@
                 <td>Se agrega el mail asociado a cada cliente, la grilla de pegado en la carga masiva de vencimientos, la ventana de alerta al ingresar y el aviso por mail al estudio a los 7 días, enviado desde Gmail mediante un script de Google (el hosting bloquea el envío directo de mails).</td>
                 <td>Revisar con el estudio los avisos recibidos y decidir si también se avisa a los clientes.</td>
               </tr>
+              <tr>
+                <td class="id-cell">16/11</td>
+                <td><strong>Pausa de alertas por mail</strong></td>
+                <td>Cliente, Back End</td>
+                <td>A pedido de Gabriel Casil se pausan los avisos por mail (<span class="mono">ALERTAS_PAUSADAS=1</span>); la ventana de alerta al ingresar sigue activa.</td>
+                <td>Reactivar los mails cuando el cliente lo indique.</td>
+              </tr>
+              <tr>
+                <td class="id-cell">17/11</td>
+                <td><strong>Cierre del proyecto</strong><br><span style="font-size:11px;color:var(--ink-3);">Versión 3.0 final</span></td>
+                <td>Equipo Nº 8</td>
+                <td>Entrega de la versión final de la carpeta, con la Documentación Técnica del Proyecto Final 2026, y del Manual de Uso.</td>
+                <td>—</td>
+              </tr>
             </tbody>
           </table>
         </div>
@@ -1707,13 +1756,175 @@
         <div class="callout info">
           <div class="callout-label">Repositorio de código</div>
           <p>Repositorio actual (Node.js/Express, migrado a Railway): <a href="https://github.com/Proyecto2026-estudio/ECR-SISTEMA" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:0.9em;color:var(--accent);font-weight:600;">github.com/Proyecto2026-estudio/ECR-SISTEMA</a><br>
+          Documento técnico (Word y PDF) y Manual de Uso: <a href="https://proyecto2026-estudio.github.io/DocumentacionEC/" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:0.9em;color:var(--accent);font-weight:600;">proyecto2026-estudio.github.io/DocumentacionEC</a><br>
           Repositorio original (backend PHP, presentación inicial): <a href="https://github.com/TomasPereyra-hub/ProyEstudioContable" target="_blank" style="font-family:'JetBrains Mono',monospace;font-size:0.9em;color:var(--accent);font-weight:600;">github.com/TomasPereyra-hub/ProyEstudioContable</a></p>
+        </div>
+      </section>
+
+
+      <!-- 31-37. DOCUMENTACIÓN TÉCNICA (pautas Proyecto Final 2026) -->
+      <section id="tec-intro">
+        <h2><span class="num">31</span>Las capas del Sistema ECR · Documento técnico</h2>
+        <p style="font-size:15px;color:var(--ink);font-weight:600;margin-bottom:6px;">Recorrido del código y herramientas</p>
+        <div class="user-tbl admin">
+          <div class="row"><div class="k">Proyecto</div><div class="v">Sistema de gestión contable para el Estudio Casil Rodríguez (ECR), San Martín, Buenos Aires</div></div>
+          <div class="row"><div class="k">Curso</div><div class="v">7mo Informática B · Instituto Leonardo Murialdo · Proyecto Final 2026</div></div>
+          <div class="row"><div class="k">Integrantes</div><div class="v">Máximo Di Menna, Gonzalo Ippolito, Valentín Loureiro, Tomás Pereyra</div></div>
+          <div class="row"><div class="k">Fecha</div><div class="v">17/11/2026</div></div>
+          <div class="row"><div class="k">Repositorio</div><div class="v"><a href="https://github.com/Proyecto2026-estudio/ECR-SISTEMA" target="_blank" style="color:var(--accent);">github.com/Proyecto2026-estudio/ECR-SISTEMA</a> · sistema en línea: <span class="mono">ecr-sistema.up.railway.app</span></div></div>
+        </div>
+        <p>
+          El Sistema ECR reemplaza las planillas y carpetas sueltas del estudio por una aplicación web única: cartera de clientes,
+          agenda de vencimientos impositivos con aviso anticipado, archivo digital por cliente, un asistente con IA y la lectura
+          automática de extractos bancarios (RF08). Las secciones 31 a 37 recorren cómo está armado: qué hace cada parte, en qué
+          archivo está y cómo viaja una orden desde la pantalla hasta la base de datos. Todas las rutas de archivos son relativas
+          a la carpeta <span class="mono">ecr-railway/</span> del repositorio.
+        </p>
+
+        <h3><span class="num">31.1</span>Las partes del sistema y cómo se relacionan</h3>
+        <p>
+          El sistema tiene cuatro partes. La página web corre en el navegador y habla con el servidor solo por HTTPS, enviando y
+          recibiendo JSON (con un token en el encabezado <span class="mono">Authorization</span>). El servidor Node.js es el único
+          que lee y escribe en la base MySQL; el navegador nunca toca la base. El servidor también es el único que llama a los
+          servicios externos (Gemini y el envío de mails), para que las claves no salgan del servidor.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:110px">Parte</th><th style="width:160px">Dónde corre</th><th>Qué hace</th><th style="width:200px">Archivos principales</th></tr></thead>
+            <tbody>
+              <tr><td class="id-cell">Página web</td><td>Navegador; los archivos los sirve el mismo servidor en Railway</td><td>Ingreso, panel, clientes, agenda, archivo digital, asistente, extractos, reportes, configuración y usuarios</td><td><span class="mono">public/login.html</span>, <span class="mono">public/index.html</span>, <span class="mono">public/recuperar.html</span></td></tr>
+              <tr><td class="id-cell">Servidor</td><td>Railway (servicio web, Node.js + Express)</td><td>API REST, tokens de sesión, permisos por rol, validaciones y migraciones al iniciar</td><td><span class="mono">src/index.js</span>, <span class="mono">src/db.js</span>, <span class="mono">package.json</span>, <span class="mono">.env.example</span></td></tr>
+              <tr><td class="id-cell">Base de datos</td><td>MySQL en Railway (proyecto <span class="mono">lovely-optimism</span>)</td><td>Usuarios, clientes, vencimientos, documentos (con el archivo), carpetas y avisos enviados</td><td><span class="mono">schema.sql</span> (raíz del repo) + migraciones en <span class="mono">src/index.js</span></td></tr>
+              <tr><td class="id-cell">Integraciones</td><td>Google Gemini API, Google Apps Script (Gmail), dolarapi.com</td><td>Asistente, lectura de extractos con IA, aviso por mail de vencimientos, cotización del dólar</td><td><span class="mono">src/ia.js</span>, <span class="mono">src/extractos.js</span>, <span class="mono">src/docs-extract.js</span>, <span class="mono">src/alertas.js</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="tec-frontend">
+        <h2><span class="num">32</span>La página web (Frontend)</h2>
+        <p>
+          Son tres páginas HTML con su CSS y su JavaScript adentro, sin frameworks. <span class="mono">index.html</span> es una
+          aplicación de una sola página: cada pantalla es una <span class="mono">&lt;section class="view"&gt;</span>
+          (<span class="mono">v-inicio</span>, <span class="mono">v-clientes</span>, <span class="mono">v-agenda</span>,
+          <span class="mono">v-docs</span>, <span class="mono">v-extractos</span>, <span class="mono">v-asistente</span>,
+          <span class="mono">v-reportes</span>, <span class="mono">v-ajustes</span>, <span class="mono">v-usuarios</span>) y la función
+          <span class="mono">nav()</span> muestra una y oculta las demás.
+        </p>
+        <ul>
+          <li><strong>Ingreso:</strong> <span class="mono">login.html</span> valida que estén el correo y la contraseña y hace <span class="mono">fetch('/api/login')</span>. Si el servidor acepta, guarda el token y los datos del usuario en <span class="mono">localStorage</span> (<span class="mono">ecr_token</span>, <span class="mono">ecr_usuario</span>). Al abrir <span class="mono">index.html</span>, un script inicial llama a <span class="mono">/api/me</span>; si el token no sirve, vuelve al login. <span class="mono">recuperar.html</span> usa <span class="mono">/api/recuperar</span>.</li>
+          <li><strong>Operación principal:</strong> <span class="mono">loadAll()</span> trae clientes, vencimientos, documentos y carpetas en paralelo con <span class="mono">Promise.all</span>, y <span class="mono">renderAll()</span> dibuja tablas, calendario (<span class="mono">renderCal</span>) y tablero (<span class="mono">renderHome</span>). Todo pedido pasa por la función <span class="mono">api()</span>, que agrega el token, envía JSON con <span class="mono">fetch()</span> y, ante un 401, cierra la sesión. <span class="mono">aplicarPermisosUI()</span> y <span class="mono">NAV_OCULTO</span> esconden menús según el rol. Hay carga masiva de vencimientos pegando desde Excel o con una plantilla CSV (<span class="mono">parseImport</span>, <span class="mono">descargarPlantilla</span>) y subida de varios documentos a la vez (<span class="mono">renderDM</span>, <span class="mono">subirDM</span>).</li>
+          <li><strong>Reportes / Comprobantes:</strong> <span class="mono">renderRep()</span> (solo administrador) calcula honorarios mensuales y anuales, ticket promedio y porcentaje de vencimientos cumplidos, y dibuja barras o torta en SVG propio (<span class="mono">pieSVG</span>), sin librerías. No se generan PDF: las salidas descargables son CSV (propuesta de asientos del extracto y plantilla de vencimientos).</li>
+          <li><strong>Detalles comunes:</strong> diseño adaptado a celular con <span class="mono">@media</span> (920, 700, 600 y 560 px) y menú hamburguesa; tipografías Lora e Inter; avisos con <span class="mono">toast()</span>; ventana de alerta al ingresar (<span class="mono">mostrarAlerta</span>) para administrador y contador cuando faltan de 7 a 1 días para un vencimiento; validación de CUIT (<span class="mono">validarCUIT</span>) y de mails antes de enviar; los errores del servidor se muestran con su mensaje en castellano.</li>
+        </ul>
+      </section>
+
+      <section id="tec-backend">
+        <h2><span class="num">33</span>El servidor (Backend)</h2>
+        <p>
+          <span class="mono">src/index.js</span> levanta Express, sirve la carpeta <span class="mono">public/</span> y recibe cada pedido así:
+          <span class="mono">express.json()</span> interpreta el cuerpo (hasta 25 MB, por los archivos en base64); el middleware
+          <span class="mono">requireAuth</span> verifica el token; según la ruta, se comprueba el rol (<span class="mono">requireAdmin</span>,
+          <span class="mono">soloEscritura</span>, <span class="mono">permisoCarpetas</span>); se valida el dato y se ejecuta la consulta con
+          <span class="mono">mysql2</span> a través del pool de <span class="mono">src/db.js</span>. Siempre responde JSON con
+          <span class="mono">ok</span> o con un <span class="mono">error</span> legible y su código HTTP (400, 401, 403, 404, 409, 500).
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:300px">Rutas / Scripts</th><th>Para qué sirve</th></tr></thead>
+            <tbody>
+              <tr><td class="id-cell">POST /api/login · GET /api/me · POST /api/recuperar</td><td>Ingreso con token firmado, datos del usuario actual y recuperación de contraseña</td></tr>
+              <tr><td class="id-cell">/api/usuarios (GET, POST, PUT, DELETE, /:id/password)</td><td>Alta, edición, baja y cambio de clave de usuarios; solo administrador</td></tr>
+              <tr><td class="id-cell">/api/clientes · /api/vencimientos · /api/documentos · /api/carpetas</td><td>Listar, crear, editar y borrar los registros principales; <span class="mono">GET /api/documentos/:id/archivo</span> abre el archivo y <span class="mono">PUT /api/documentos/:id/carpeta</span> lo mueve</td></tr>
+              <tr><td class="id-cell">POST /api/asistente</td><td>Consulta a Gemini, opcionalmente sobre la carpeta de documentos de un cliente (<span class="mono">src/ia.js</span>)</td></tr>
+              <tr><td class="id-cell">POST /api/extractos/leer</td><td>RF08: lee un extracto bancario y devuelve la propuesta de cuentas (<span class="mono">src/extractos.js</span>)</td></tr>
+              <tr><td class="id-cell">POST /api/alertas/ejecutar</td><td>Solo administrador: envía el aviso de vencimientos ahora o un mail de prueba (<span class="mono">?prueba=1</span>)</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <ul>
+          <li><strong>Quién es quién (Permisos):</strong> el token es propio y firmado con HMAC-SHA256 (<span class="mono">signToken</span> / <span class="mono">verifyToken</span>): lleva <span class="mono">id</span>, <span class="mono">rol</span> y vencimiento a 7 días, y viaja como <span class="mono">Authorization: Bearer</span>. Hay cuatro roles: <span class="mono">admin</span> (todo), <span class="mono">contador</span> (gestión diaria), <span class="mono">cliente_pyme</span> (solo los documentos y carpetas de su propia empresa, vinculada por <span class="mono">usuarios.cliente_id</span>) y <span class="mono">lectura</span> (ve pero no modifica). El rol se vuelve a leer de la base en cada operación sensible, así que un cambio de rol rige al instante. Los honorarios solo se envían y se modifican si <span class="mono">esAdminReq()</span> confirma que es administrador.</li>
+          <li><strong>Secretos:</strong> las contraseñas se guardan con <span class="mono">crypto.scryptSync</span> y una sal aleatoria por usuario (equivalente en Node a <span class="mono">password_hash</span>), y se comparan con <span class="mono">timingSafeEqual</span>. Las credenciales de MySQL, <span class="mono">APP_SECRET</span>, <span class="mono">GEMINI_API_KEY</span> y las de mail están en variables de entorno de Railway; en local van en <span class="mono">.env</span>, que está en <span class="mono">.gitignore</span>. En GitHub solo está <span class="mono">.env.example</span>, sin valores reales.</li>
+          <li><strong>Validación y cálculos:</strong> todas las consultas usan parámetros <span class="mono">?</span> de <span class="mono">mysql2</span> (consultas preparadas, sin concatenar datos). El servidor exige los campos obligatorios, limpia y valida los mails de alerta (<span class="mono">limpiarMails</span>), impide nombres de carpeta repetidos (409), controla que la carpeta y el documento sean del mismo cliente, y en RF08 acepta solo PDF o imagen de hasta 15 MB y recalcula él mismo los saldos (<span class="mono">verificar()</span>), sin confiar en la IA.</li>
+        </ul>
+      </section>
+
+      <section id="tec-bd">
+        <h2><span class="num">34</span>La base de datos</h2>
+        <p>
+          Motor <strong>MySQL</strong>, alojado en Railway junto al servidor. <span class="mono">schema.sql</span>, en la raíz del repositorio,
+          crea las tablas; al iniciar, <span class="mono">src/index.js</span> ejecuta migraciones livianas (<span class="mono">ALTER TABLE</span> /
+          <span class="mono">CREATE TABLE IF NOT EXISTS</span>) para agregar lo que falte sin perder datos.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:160px">Tabla</th><th>Qué guarda</th></tr></thead>
+            <tbody>
+              <tr><td class="id-cell">usuarios</td><td>Nombre, correo, <span class="mono">password_hash</span> (scrypt + sal), <span class="mono">rol</span> y <span class="mono">cliente_id</span> para los usuarios Cliente PyME</td></tr>
+              <tr><td class="id-cell">clientes</td><td>Razón social, CUIT, servicio contratado, honorarios, estado y mails para avisos</td></tr>
+              <tr><td class="id-cell">vencimientos</td><td>Descripción, tipo (impositivo, laboral, societario), fecha, estado y cliente (FK a <span class="mono">clientes</span>)</td></tr>
+              <tr><td class="id-cell">documentos</td><td>Nombre, tipo, fecha, cliente, carpeta y el archivo en base64 con su tipo MIME y nombre original</td></tr>
+              <tr><td class="id-cell">carpetas</td><td>Subcarpetas dentro de la carpeta de cada cliente (por ejemplo, una por banco); nombre único por cliente</td></tr>
+              <tr><td class="id-cell">alertas_enviadas</td><td>Qué vencimiento ya se avisó por mail y cuándo, para no repetir el aviso</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section id="tec-integraciones">
+        <h2><span class="num">35</span>Integraciones externas</h2>
+        <p>El sistema no cobra, así que no tiene pasarela de pagos ni hardware. Sus integraciones son APIs:</p>
+        <ul>
+          <li><strong>Google Gemini (asistente):</strong> <span class="mono">src/ia.js</span> llama a <span class="mono">gemini-2.5-flash</span> con la clave guardada en el servidor. Si se elige un cliente, <span class="mono">src/docs-extract.js</span> adjunta sus documentos (PDF e imágenes tal cual; Excel convertido a CSV leyendo el zip con <span class="mono">zlib</span>), y la IA debe citar de qué documento saca cada dato. Sin cliente elegido, puede buscar en la web (<span class="mono">google_search</span>); si se agota la cuota, el frontend repite la consulta sin búsqueda.</li>
+          <li><strong>Google Gemini (RF08, extractos bancarios):</strong> <span class="mono">src/extractos.js</span> envía el PDF con un esquema JSON obligatorio (<span class="mono">responseSchema</span>), temperatura 0 y un plan de 14 cuentas. Devuelve los movimientos clasificados y el costo en USD de cada lectura. La IA solo propone: nada se guarda en la base y el contador revisa y corrige cada cuenta. Estado: implementada y en prueba; queda plenamente activa con la clave paga de Gemini.</li>
+          <li><strong>Aviso de vencimientos por mail:</strong> <span class="mono">src/alertas.js</span> revisa cada 30 minutos (a partir de las 8:00, hora argentina) qué vencimientos no cumplidos vencen en 7 días y manda un único mail al estudio, enviado desde Gmail a través de un Google Apps Script publicado (<span class="mono">ALERTAS_WEBHOOK_URL</span> + <span class="mono">ALERTAS_WEBHOOK_SECRET</span>), porque Railway bloquea los puertos SMTP. Hoy está pausado con <span class="mono">ALERTAS_PAUSADAS=1</span> a pedido del cliente.</li>
+          <li><strong>Otros:</strong> cotización del dólar en vivo desde dolarapi.com (<span class="mono">loadTicker</span>, sin clave). El archivo <span class="mono">src/whatsapp.js</span> quedó en el código, pero está inactivo y sin configurar, porque el estudio no usa WhatsApp.</li>
+        </ul>
+      </section>
+
+      <section id="tec-recorrido">
+        <h2><span class="num">36</span>El recorrido de punta a punta</h2>
+        <h3><span class="num">Caso A</span>El contador sube un extracto bancario para que la IA proponga los asientos (RF08)</h3>
+        <ol>
+          <li>En la vista <span class="mono">v-extractos</span>, el contador elige el PDF; <span class="mono">FileReader</span> lo pasa a base64 y <span class="mono">api('/api/extractos/leer','POST', {archivo_base64, mime})</span> lo envía con el token.</li>
+          <li>En el servidor, <span class="mono">requireAuth</span> valida la firma y la vigencia del token; la ruta lee el rol en <span class="mono">usuarios</span> y rechaza con 403 a <span class="mono">cliente_pyme</span> y <span class="mono">lectura</span>. <span class="mono">leerExtracto()</span> comprueba que sea PDF o imagen y que no pase de 15 MB.</li>
+          <li>En la base solo se consulta el rol: por diseño, los movimientos no se guardan, porque son una propuesta pendiente de revisión.</li>
+          <li>Gemini 2.5 Flash devuelve el JSON con banco, saldos y movimientos (fecha, descripción, importe con signo y código de cuenta). <span class="mono">verificar()</span> suma los importes, compara con el saldo final y marca las filas que no cierran con el saldo corrido.</li>
+          <li><span class="mono">renderExtracto()</span> muestra tarjetas con débitos, créditos y control de saldos ("✔ Cierra" / "✖ No cierra"), resalta en rojo las filas con problemas y en amarillo las "a revisar", deja cambiar la cuenta de cada fila e informa los tokens y el costo; el botón CSV descarga la propuesta.</li>
+        </ol>
+        <h3><span class="num">Caso B</span>Un usuario Cliente PyME intenta abrir un documento de otra empresa</h3>
+        <ol>
+          <li>La página ya le oculta clientes, reportes y extractos (<span class="mono">NAV_OCULTO</span>), pero si igual pide <span class="mono">GET /api/documentos/:id/archivo</span> con el número de un documento ajeno, el pedido sale con su token.</li>
+          <li><span class="mono">requireAuth</span> acepta el token, porque es válido, y la ruta llama a <span class="mono">usuarioActual()</span>, que lee de <span class="mono">usuarios</span> su rol (<span class="mono">cliente_pyme</span>) y su <span class="mono">cliente_id</span>.</li>
+          <li>El servidor busca el documento en <span class="mono">documentos</span> y compara su <span class="mono">cliente_id</span> con el del usuario: no coinciden.</li>
+          <li>Responde <span class="mono">403</span> con <span class="mono">{"error": "No tenés acceso a este documento"}</span>; el archivo nunca se lee ni se envía.</li>
+          <li>En el navegador, <span class="mono">api()</span> convierte la respuesta en error y <span class="mono">toast()</span> muestra el mensaje; la sesión sigue abierta y el usuario solo ve los documentos de su empresa.</li>
+        </ol>
+      </section>
+
+      <section id="tec-herramientas">
+        <h2><span class="num">37</span>Herramientas utilizadas</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th style="width:190px">Herramienta</th><th>Para qué se usó</th></tr></thead>
+            <tbody>
+              <tr><td class="id-cell">Lenguajes</td><td>JavaScript en el servidor (Node.js) y en el navegador; HTML y CSS para las pantallas; SQL para crear y consultar la base.</td></tr>
+              <tr><td class="id-cell">Backend y Frontend</td><td>Express 4, mysql2, cors, dotenv y nodemailer (<span class="mono">package.json</span>). Frontend en JavaScript puro, sin frameworks; gráficos SVG propios; Google Fonts.</td></tr>
+              <tr><td class="id-cell">Base de datos y Hosting</td><td>Railway: servicio web Node.js + MySQL en el proyecto <span class="mono">lovely-optimism</span> (USD 5/mes). El hosting original en AlwaysData (PHP) quedó suspendido y se migró a Railway entre el 12/8 y el 30/8/2026, reescribiendo el backend en Node.js.</td></tr>
+              <tr><td class="id-cell">GitHub y Pruebas (QA)</td><td>Código en <span class="mono">Proyecto2026-estudio/ECR-SISTEMA</span>; documentación y Manual de Uso en <span class="mono">Proyecto2026-estudio/DocumentacionEC</span>. Pruebas manuales con los cuatro roles, mail de prueba desde <span class="mono">/api/alertas/ejecutar?prueba=1</span> y control automático de saldos en RF08. Sin pasarela de pagos, no hubo pruebas con tarjetas.</td></tr>
+              <tr><td class="id-cell">Inteligencia Artificial</td><td><strong>Desarrollo:</strong> Claude (claude.ai y Claude Code), modelo <strong>Claude Opus 5.5</strong>: asistió en la migración de PHP a Node.js, el diseño de roles y permisos, RF08, las alertas y la documentación. El equipo probó cada cambio en el sistema desplegado en Railway con usuarios de cada rol antes de darlo por bueno. <strong>Dentro del sistema:</strong> Google Gemini, modelo <strong>gemini-2.5-flash</strong>, para el asistente del estudio y la lectura de extractos; sus resultados siempre los revisa el contador.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout info">
+          <div class="callout-label">Descarga</div>
+          <p>Esta documentación técnica también está en formato Word y PDF (4 carillas) en <a href="https://proyecto2026-estudio.github.io/DocumentacionEC/" target="_blank" style="color:var(--accent);font-weight:600;">proyecto2026-estudio.github.io/DocumentacionEC</a>, junto al Manual de Uso.</p>
         </div>
       </section>
 
       <!-- FOOTER -->
       <div class="footer">
-        <div>Sistema de Gestión Contable · ERS v2.3 Actualizado · Equipo Nº 8</div>
+        <div>Sistema de Gestión Contable · ERS v3.0 Final · Equipo Nº 8</div>
         <div class="mono">Estudio Casil Rodríguez · Instituto Leonardo Murialdo 2026</div>
       </div>
 
